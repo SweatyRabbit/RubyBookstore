@@ -3,23 +3,20 @@ version: 2.1
 orbs:
   ruby: circleci/ruby@1.0 
   node: circleci/node@2
-  browser-tools: circleci/browser-tools@1.0.1
 
 jobs:
-  lintering:
+  build:
     docker:
       - image: cimg/ruby:3.0.3-node
     steps:
-      - checkout 
-      - ruby/install-deps 
-      - node/install-packages:
+      - checkout
+      - ruby/install-deps
+      - node/install-packages: 
           pkg-manager: yarn
           cache-key: "yarn.lock"
-      - run: 
-          name: rubocop
-          command: bundle exec rubocop
-          
+
   test:
+    parallelism: 3 
     docker:
       - image: cimg/ruby:3.0.3-node
       - image: circleci/postgres:9.5-alpine 
@@ -27,6 +24,7 @@ jobs:
           POSTGRES_USER: book_store
           POSTGRES_DB: book_store_test
           POSTGRES_PASSWORD: "book_store"
+
     environment:
       BUNDLE_JOBS: "3"
       BUNDLE_RETRY: "3"
@@ -36,8 +34,6 @@ jobs:
     steps:
       - checkout 
       - ruby/install-deps 
-      - browser-tools/install-chrome
-      - browser-tools/install-chromedriver
       - node/install-packages:
           pkg-manager: yarn
           cache-key: "yarn.lock"
@@ -47,13 +43,13 @@ jobs:
       - run:
           name: Database setup
           command: bundle exec rails db:schema:load --trace
-      - run: 
-          name: run specs
-          command: bundle exec rspec
+      - ruby/rspec-test
 
 workflows:
   version: 2
-  lint_and_test:
+  build_and_test:
     jobs:
-      - lintering
-      - test
+      - build
+      - test:
+          requires:
+            - build
