@@ -23,13 +23,13 @@ jobs:
         environment:
           POSTGRES_USER: RubyBookstore
           POSTGRES_DB: RubyBookstore_test
-          POSTGRES_PASSWORD: "RubyBookstore"
+          POSTGRES_PASSWORD: "admin"
 
     environment:
       BUNDLE_JOBS: "3"
       BUNDLE_RETRY: "3"
       PGHOST: 127.0.0.1
-      BOOK_STORE_DATABASE_PASSWORD: "RubyBookstore"
+      BOOK_STORE_DATABASE_PASSWORD: "admin"
       RAILS_ENV: test
     steps:
       - checkout 
