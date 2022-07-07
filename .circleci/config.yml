@@ -23,7 +23,7 @@ jobs:
         environment:
           POSTGRES_USER: RubyBookstore
           POSTGRES_DB: RubyBookstore_test
-          POSTGRES_PASSWORD: "admin"
+          POSTGRES_PASSWORD: <%= ENV["RUBYBOOKSTORE_DATABASE_PASSWORD"] %>
 
     environment:
       BUNDLE_JOBS: "3"
