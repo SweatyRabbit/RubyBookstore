@@ -24,7 +24,7 @@ jobs:
       - image: cimg/ruby:3.0.3-node
       - image: circleci/postgres:12-alpine
         environment:
-          POSTGRES_USER: postgres
+          POSTGRES_USER: circleci
           POSTGRES_DB: RubyBookstore_test
           POSTGRES_PASSWORD: "postgres"
     environment:
