@@ -24,7 +24,7 @@ jobs:
       - image: cimg/ruby:3.0.3-node
       - image: circleci/postgres:12-alpine
         environment:
-          POSTGRES_USER: postgres
+          POSTGRES_USER: Rails.application.credentials.dig(:bookstore, :username)
           POSTGRES_DB: RubyBookstore_test
           POSTGRES_PASSWORD: Rails.application.credentials.dig(:bookstore, :password)
     environment:
