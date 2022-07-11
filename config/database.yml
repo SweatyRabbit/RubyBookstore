@@ -9,6 +9,10 @@ development:
   <<: *default
   database: RubyBookstore_development
 
+test:
+  <<: *default
+  database: RubyBookstore_test
+
 production:
   <<: *default
   database: RubyBookstore_production
