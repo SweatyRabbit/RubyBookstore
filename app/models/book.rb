@@ -5,4 +5,5 @@ class Book < ApplicationRecord
   validates :price, numericality: { greater_than: 0.0 }
 
   has_many :authors, through: :author_books
+  belongs_to :categories
 end
