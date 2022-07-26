@@ -6,4 +6,6 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root 'home_pages#home'
+
+  resources 'books'
 end

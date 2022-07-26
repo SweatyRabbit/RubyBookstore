@@ -1,8 +1,8 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  username: Rails.application.credentials.dig(:bookstore, :username)
-  password: Rails.application.credentials.dig(:bookstore, :password)
+  username: ivan
+  password: admin
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:

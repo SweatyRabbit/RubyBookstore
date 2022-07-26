@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
 class HomePagesController < ApplicationController
-  def home; end
+  def home
+    @books = Book.order(created_at: :desc).limit(2).decorate
+  end
 end

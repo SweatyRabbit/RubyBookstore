@@ -1,0 +1,60 @@
+
+%main.container
+  %h1.general-title-margin Сatalog
+  .hidden-xs.clearfix
+    .dropdowns.pull-right
+      .dropdown.width-240
+        %a.dropdown-toggle.lead.small{href: "#", 'data-toggle': "dropdown", role: "button", 'aria-haspopup': "true", 'aria-expanded': "false"}
+          = t("book.filter.#{params[:filter] || FilterBooksByCategory::DEFAULT_FILTER}")
+          %i.fa.fa-angle-down.dropdown-icon.pull-right
+        %ul.dropdown-menu
+          - FilterBooksByCategory::BOOK_FILTER.each_key do |filter|
+            %li
+              = link_to t("book.filter.#{filter}"), books_path(filter: filter)
+    %ul.list-inline.pt-10.mb-25.mr-240
+      %li.mr-35
+        %a.filter-link{href: books_path} All
+        - Category.pluck(:name).each do |name|
+          %li.mr-35
+            %a.filter-link{href: books_path(filter_by: name)}= name
+            %span.badge.general-badge 135
+  .dropdowns.mb-25.visible-xs
+    %p.lead.small.mb-10 Filter by category
+    .dropdown
+      %a.dropdown-toggle.lead.small{href: "#", 'data-toggle': "dropdown", role: "button", 'aria-haspopup': "true", 'aria-expanded': "false"}
+        = t("book.filter.#{params[:filter] || FilterBooksByCategory::DEFAULT_FILTER}")
+        %i.fa.fa-angle-down.dropdown-icon.pull-right
+      %ul.dropdown-menu
+        - FilterBooksByCategory::BOOK_FILTER.each_key do |filter|
+          %li
+            = link_to t("book.filter.#{filter}"), books_path(filter: filter)
+    %p.lead.small.mb-10 Sort by
+    .dropdown
+      %a.dropdown-toggle.lead.small{href: "#", 'data-toggle': "dropdown", role: "button", 'aria-haspopup': "true", 'aria-expanded': "false"}
+        = t("book.filter.#{params[:filter] || FilterBooksByCategory::DEFAULT_FILTER}")
+        %i.fa.fa-angle-down.dropdown-icon.pull-right
+      %ul.dropdown-menu
+        - FilterBooksByCategory::BOOK_FILTER.each_key do |filter|
+          %li
+            = link_to t("book.filter.#{filter}"), books_path(filter: filter)
+  .mb-120
+    .row.mb-25
+      - @books.each do |book|
+        .col-xs-6.col-sm-3
+          .general-thumb-wrap
+            .thumbnail.general-thumbnail
+              %img.img-shadow.general-thumbnail-img{src: "http://jonathantweedy.com/resources/thumbs/SmashingBook5ResponsiveWebDesign.jpg", alt: "design-book"}
+              .thumb-hover
+                .general-thumb-link-wrap
+                  %a.thumb-hover-link{href: "#"}
+                    %i.fa.fa-eye.thumb-icon{'aria-hidden': "true"}
+                  %a.thumb-hover-link{href: "#"}
+                    %i.fa.fa-shopping-cart.thumb-icon
+          .general-thumb-info
+            %p.title= book.title.capitalize
+            %p.font-16.in-gold-500= I18n.t('book.price', price: book.price)
+            %span.divider-sm
+            %p.lead.small= book.decorate.authors_full_name
+  .text-center
+    %button.btn.btn-primary= pagy_next_link(@pagy, t('catalog.load_more'), 'id="load_more"').html_safe
+%script{src: "https://use.fontawesome.com/67602d7308.js"}

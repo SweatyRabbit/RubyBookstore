@@ -9,7 +9,7 @@ ruby '3.0.3'
 gem 'rails', '~> 7.0.3'
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
-gem 'sprockets-rails'
+gem 'sprockets-rails', require: 'sprockets/railtie'
 
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.1'
@@ -21,6 +21,7 @@ gem 'puma', '~> 5.0'
 gem 'importmap-rails'
 
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
+gem 'turbolinks'
 gem 'turbo-rails'
 
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
@@ -54,9 +55,16 @@ gem 'sassc-rails', '>= 2.1.0'
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
+gem 'pagy', '~> 3.5'
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'debug', platforms: %i[mri mingw x64_mingw]
+  gem 'draper'
+  gem 'factory_bot_rails'
+  gem 'ffaker'
+  gem 'lefthook', '~> 0.5.5'
+  gem 'pry'
   gem 'rails-controller-testing'
   gem 'rspec-rails', '>= 3.9.0'
 end
