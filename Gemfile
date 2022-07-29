@@ -62,6 +62,7 @@ group :development, :test do
   gem 'debug', platforms: %i[mri mingw x64_mingw]
   gem 'draper'
   gem 'factory_bot_rails'
+  gem 'fasterer', '~> 0.9', require: false
   gem 'ffaker'
   gem 'lefthook', '~> 0.5.5'
   gem 'pry'
@@ -85,5 +86,7 @@ group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem 'capybara'
   gem 'selenium-webdriver'
+  gem 'shoulda-matchers', '~> 5.1.0'
+  gem 'simplecov'
   gem 'webdrivers'
 end

@@ -19,3 +19,7 @@ Style/FrozenStringLiteralComment:
 
 RSpec/MultipleExpectations:
   Max: 3
+
+Metrics/MethodLength:
+  Exclude: 
+    - 'db/migrate/*'

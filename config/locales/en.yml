@@ -34,9 +34,11 @@ en:
 
   catalog:
     load_more: 'View More'
+    all: 'All'
 
   book:
     price: " € %{price}"
+    dimensions: 'H:%{height} x W: %{width} x D: %{depth}'
     filter:
       created_at_desc: 'Newest first'
       popular_asc: 'Popular first'

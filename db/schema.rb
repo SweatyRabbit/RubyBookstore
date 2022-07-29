@@ -34,6 +34,11 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_06_101550) do
     t.string "title", null: false
     t.decimal "price"
     t.text "description"
+    t.integer "publication_year"
+    t.decimal "height", precision: 10, scale: 2
+    t.decimal "width", precision: 10, scale: 2
+    t.decimal "depth", precision: 10, scale: 2
+    t.string "materials"
     t.bigint "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

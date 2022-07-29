@@ -24,7 +24,7 @@
             %a{type: "button", 'data-toggle': "collapse", href: "#menu", 'aria-expanded': "false", 'aria-controls': "menu"}= I18n.t('header.shop')
             %ul#menu.collapse.list-unstyled.pl-30.mb-10{'aria-expanded': "false"}
               %li
-                %a.collapse-link{href: books_path} All
+                %a.collapse-link{href: books_path}= t('catalog.all')
               - Category.limit(4).pluck(:name).each do |name|
                 %li
                   %a.collapse-link{href: books_path(filter_by: name)}= name
@@ -35,10 +35,10 @@
           %li
             %a{href: root_path}= I18n.t('header.home')
           %li.dropdown
-            %a.dropdown-toggle{href: "#", 'data-toggle': "dropdown", role: "button", 'aria-haspopup': "true", 'aria-expanded': "false"} Shop
+            %a.dropdown-toggle{href: "#", 'data-toggle': "dropdown", role: "button", 'aria-haspopup': "true", 'aria-expanded': "false"}= I18n.t('header.shop')
             %ul.dropdown-menu
               %li
-                %a.collapse-link{href: books_path} All
+                %a.collapse-link{href: books_path}= t('catalog.all')
               - Category.limit(4).pluck(:name).each do |name|
                 %li
                   %a.collapse-link{href: books_path(filter_by: name)}= name

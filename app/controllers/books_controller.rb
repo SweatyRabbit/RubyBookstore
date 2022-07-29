@@ -2,10 +2,14 @@
 
 class BooksController < ApplicationController
   include Pagy::Backend
-  BOOKS_TO_SHOW = 12
 
   def index
-    @pagy, @books = pagy_countless(prepared_books, link_extra: 'data-remote="true', items: BOOKS_TO_SHOW)
+    @pagy, @books = pagy_countless(prepared_books, link_extra: 'data-remote="true"')
+    @books_count = Book.all.count
+  end
+
+  def show
+    @book = Book.find(params[:id])
   end
 
   private
