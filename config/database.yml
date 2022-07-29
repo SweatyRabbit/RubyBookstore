@@ -16,5 +16,3 @@ test:
 production:
   <<: *default
   database: RubyBookstore_production
-  username: RubyBookstore
-  password: <%= ENV["RUBYBOOKSTORE_DATABASE_PASSWORD"] %>
