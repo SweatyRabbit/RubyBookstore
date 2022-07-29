@@ -26,12 +26,12 @@ jobs:
         environment:
           POSTGRES_USER: postgres
           POSTGRES_DB: RubyBookstore_test
-          POSTGRES_PASSWORD: postgres
+          POSTGRES_PASSWORD: Rails.application.credentials.dig(:bookstore, :password)
     environment:
       BUNDLE_JOBS: "3"
       BUNDLE_RETRY: "3"
       PGHOST: 127.0.0.1
-      BOOK_STORE_DATABASE_PASSWORD: postgres
+      BOOK_STORE_DATABASE_PASSWORD: Rails.application.credentials.dig(:bookstore, :password)
       RAILS_ENV: test
     steps:
       - checkout
