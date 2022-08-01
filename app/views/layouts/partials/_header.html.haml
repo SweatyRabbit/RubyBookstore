@@ -25,7 +25,7 @@
             %ul#menu.collapse.list-unstyled.pl-30.mb-10{'aria-expanded': "false"}
               %li
                 %a.collapse-link{href: books_path}= t('catalog.all')
-              - Category.limit(4).pluck(:name).each do |name|
+              - Category.pluck(:name).each do |name|
                 %li
                   %a.collapse-link{href: books_path(filter_by: name)}= name
           %li
@@ -39,7 +39,7 @@
             %ul.dropdown-menu
               %li
                 %a.collapse-link{href: books_path}= t('catalog.all')
-              - Category.limit(4).pluck(:name).each do |name|
+              - Category.pluck(:name).each do |name|
                 %li
                   %a.collapse-link{href: books_path(filter_by: name)}= name
               %li.divider{role: "separator"}
