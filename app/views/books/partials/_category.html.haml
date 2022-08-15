@@ -2,11 +2,11 @@
   %li.mr-35
     %a.filter-link{href: books_path}
       = t('catalog.all')
-    %span.badge.general-badge
-      = @books_count
-    - Category.all.each do |category|
-      %li.mr-35
-        %a.filter-link{href: books_path(filter_by: category.name)}
-          = category.name
+      %span.badge.general-badge
+        = @books_count
+  - Category.all.each do |category|
+    %li.mr-35
+      %a.filter-link{href: books_path(filter_by: category.name)}
+        = category.name
         %span.badge.general-badge
           = category.books.count

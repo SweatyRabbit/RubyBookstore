@@ -42,8 +42,16 @@
               - Category.pluck(:name).each do |name|
                 %li
                   %a.collapse-link{href: books_path(filter_by: name)}= name
-              %li.divider{role: "separator"}
-              %li
-                %a{href: "#"}= I18n.t('header.log_out')
-          %li
-            %a{href: "#"}= I18n.t('header.my_account')
+          - if user_signed_in?
+            %li
+              %a.dropdown-toggle{href: "#", 'data-toggle': "dropdown", role: "button", 'aria-haspopup': "true", 'aria-expanded': "false"}
+                = t('header.my_account')
+              %ul.dropdown-menu
+                %li.divider{role: "separator"}
+                %li
+                  = link_to t('header.log_out'), destroy_user_session_path, method: :delete
+          - else
+            %li
+              %a{href: new_user_session_path}Log In
+            %li
+              %a{href: new_user_registration_path}Sign Up

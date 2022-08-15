@@ -1,0 +1,19 @@
+%main.container.general-main-wrap
+  .text-center
+    %h3.general-login-title Sign Up
+    = link_to user_facebook_omniauth_authorize_path, class: 'general-login-icon', method: :post do
+      %i.fa.fa-facebook-official.fa-lg
+    %p.general-login-text or
+  = simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: 'width-370 center-form' }) do |f|
+    .form-group.mb-30
+      = f.input :email, autofocus: true, autocomplete: "email", placeholder: t('devise.email')
+    .form-group.mb-30
+      = f.input :password, autocomplete: "current-password", placeholder: t('devise.password')
+    .form-group.mb-30
+      = f.input :password_confirmation, autocomplete: "repeated-password", placeholder: t('devise.confirm_password')
+    .text-center
+      = f.button :submit, t('devise.sign_up')
+  %p.general-sign-text.text-center
+    = t('devise.has_account')
+    %a.in-gold-500{href: new_user_session_path}= t('devise.log_in')
+%script{src: "https://use.fontawesome.com/67602d7308.js"}

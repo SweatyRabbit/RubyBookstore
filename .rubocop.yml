@@ -8,12 +8,16 @@ AllCops:
 
 Layout/LineLength:
   Max: 120
+  Exclude:
+    - 'config/initializers/simple_form.rb'
 
 Style/Documentation:
   Enabled: false
 
 Metrics/BlockLength:
   IgnoredMethods: ['describe', 'context', 'guard']
+  Exclude:
+    - 'config/environments/*'
 
 Style/FrozenStringLiteralComment:
   Enabled: false
@@ -24,3 +28,6 @@ RSpec/MultipleExpectations:
 Metrics/MethodLength:
   Exclude: 
     - 'db/migrate/*'
+
+Rails/BulkChangeTable:
+  Enabled: false
