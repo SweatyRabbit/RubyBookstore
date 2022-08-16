@@ -8,12 +8,16 @@ ruby '3.0.0'
 gem 'bootsnap', require: false
 gem 'bootstrap-sass', '~> 3.4.1'
 gem 'devise', '~> 4.8.1'
+gem 'draper'
+gem 'factory_bot_rails'
+gem 'ffaker'
 gem 'haml-rails'
 gem 'importmap-rails'
 gem 'jbuilder'
 gem 'jquery-rails', '~> 4.5.0'
 gem 'omniauth-facebook', '~> 9.0'
 gem 'omniauth-rails_csrf_protection', '~> 1.0.1'
+gem 'pagy', '~> 3.5'
 gem 'pg', '~> 1.1'
 gem 'puma', '~> 5.0'
 gem 'rails', '~> 7.0.3'
@@ -24,10 +28,6 @@ gem 'stimulus-rails'
 gem 'turbolinks'
 gem 'turbo-rails'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
-gem 'draper'
-gem 'ffaker'
-gem 'factory_bot_rails'
-gem 'pagy', '~> 3.5'
 
 group :development, :test do
   gem 'debug', platforms: %i[mri mingw x64_mingw]
