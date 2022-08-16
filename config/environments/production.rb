@@ -7,12 +7,12 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    user_name: Rails.application.credentials.dig(:smtp, :username),
-    password: Rails.application.credentials.dig(:smtp, :password),
+    user_name: Rails.application.credentials.smtp.username,
+    password: Rails.application.credentials.smtp.password,
     address: 'smtp.gmail.com',
     domain: 'gmail.com',
-    port: '587',
-    authentication: :plain,
+    port: 587,
+    authentication: 'plain',
     enable_starttls_auto: true
   }
   config.cache_classes = true
