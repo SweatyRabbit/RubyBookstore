@@ -8,7 +8,7 @@ orbs:
 jobs:
   lintering:
     docker:
-      - image: cimg/ruby:3.0.3-node
+      - image: cimg/ruby:3.0.0-node
     steps:
       - checkout
       - ruby/install-deps
@@ -21,7 +21,7 @@ jobs:
 
   test:
     docker:
-      - image: cimg/ruby:3.0.3-node
+      - image: cimg/ruby:3.0.0-node
       - image: circleci/postgres:12-alpine
         environment:
           POSTGRES_USER: Rails.application.credentials.dig(:bookstore, :username)
