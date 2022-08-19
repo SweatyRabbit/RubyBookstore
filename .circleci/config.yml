@@ -24,9 +24,9 @@ jobs:
       - image: cimg/ruby:3.0.0-node
       - image: circleci/postgres:12-alpine
         environment:
-          POSTGRES_USER: postgres
+          POSTGRES_USER: ivan
           POSTGRES_DB: RubyBookstore_test
-          POSTGRES_PASSWORD: postgres
+          POSTGRES_PASSWORD: admin
     environment:
       BUNDLE_JOBS: "3"
       BUNDLE_RETRY: "3"
