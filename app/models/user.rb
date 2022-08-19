@@ -6,7 +6,7 @@ class User < ApplicationRecord
          :confirmable, omniauth_providers: %i[facebook]
 
   validates :email, presence: true
-  validates :password, format: { with: PASSWORD_FORMAT }, if: :password_required?
+  validates :password, format: { with: PASSWORD_FORMAT }
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
