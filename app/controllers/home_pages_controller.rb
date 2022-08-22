@@ -2,6 +2,6 @@
 
 class HomePagesController < ApplicationController
   def home
-    @books = Book.order(created_at: :desc).limit(2).decorate
+    @latest_books = Book.order(created_at: :desc).limit(3).decorate
   end
 end
