@@ -3,6 +3,7 @@ require:
   - rubocop-rspec
 
 AllCops:
+    TargetRubyVersion: 3.0.3
     NewCops: enable
 
 Layout/LineLength:
@@ -19,3 +20,7 @@ Style/FrozenStringLiteralComment:
 
 RSpec/MultipleExpectations:
   Max: 3
+
+Metrics/MethodLength:
+  Exclude: 
+    - 'db/migrate/*'

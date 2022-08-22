@@ -1,21 +1,10 @@
-!!!
-%html
-  %head
-    %meta{charset: "UTF-8"}
-    %meta{name: "viewport", content: "width=device-width"}
-    %title= I18n.t('header.bookstore')
-    %link{href: "https://fonts.googleapis.com/css?family=Open+Sans", rel: "stylesheet"}
-    %link{href: "../css/style.css", rel: "stylesheet"}
-  %body
-    %main.container
-      = render partial: 'home_pages/partials/slider'
-    .container
-      .jumbotron.text-center.mb-0
-        %h2.h1= I18n.t('home.welcome')
-        .mb-res-50
-          %p= I18n.t('home.description')
-        %button.btn.btn-default= I18n.t('home.start')
-      = render partial: 'home_pages/partials/best_sellers'
-    %script{src: "https://use.fontawesome.com/67602d7308.js"}
-    %script{src: "../../javascripts/jquery.js"}
-    %script{src: "../../javascripts/bootstrap.js"}
+%main.container
+  = render partial: 'home_pages/partials/slider'
+.container
+  .jumbotron.text-center.mb-0
+    %h2.h1= I18n.t('home.welcome')
+    .mb-res-50
+      %p= I18n.t('home.description')
+    %button.btn.btn-default= I18n.t('home.start')
+  = render partial: 'home_pages/partials/best_sellers'
+%script{src: "https://use.fontawesome.com/67602d7308.js"}
