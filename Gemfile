@@ -3,10 +3,13 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.0.3'
+ruby '3.0.0'
 
 gem 'bootsnap', require: false
 gem 'bootstrap-sass', '~> 3.4.1'
+gem 'draper'
+gem 'factory_bot_rails'
+gem 'ffaker'
 gem 'haml-rails'
 gem 'importmap-rails'
 gem 'jbuilder'
@@ -25,10 +28,7 @@ gem 'pagy', '~> 3.5'
 
 group :development, :test do
   gem 'debug', platforms: %i[mri mingw x64_mingw]
-  gem 'draper'
-  gem 'factory_bot_rails'
   gem 'fasterer', '~> 0.9', require: false
-  gem 'ffaker'
   gem 'lefthook', '~> 0.5.5'
   gem 'pry'
   gem 'rails-controller-testing'

@@ -35,10 +35,6 @@ en:
   catalog:
     load_more: 'View More'
     all: 'All'
-
-  book:
-    price: " € %{price}"
-    dimensions: 'H:%{height} x W: %{width} x D: %{depth}'
     filter:
       created_at_desc: 'Newest first'
       popular_asc: 'Popular first'
@@ -46,3 +42,7 @@ en:
       high_to_low: 'Price: Hight to low'
       title_atoz: 'Title A - Z'
       title_ztoa: 'Title Z - A'
+
+  book:
+    price: " € %{price}"
+    dimensions: 'H:%{height} x W: %{width} x D: %{depth}'

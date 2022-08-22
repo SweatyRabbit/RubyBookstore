@@ -3,8 +3,10 @@
 class BooksController < ApplicationController
   include Pagy::Backend
 
+  DATA_REMOTE = 'data-remote="true"'
+
   def index
-    @pagy, @books = pagy_countless(prepared_books, link_extra: 'data-remote="true"')
+    @pagy, @books = pagy_countless(prepared_books, link_extra: DATA_REMOTE)
     @books_count = Book.all.count
   end
 
