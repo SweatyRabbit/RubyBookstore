@@ -5,8 +5,13 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :omniauthable,
          :confirmable, omniauth_providers: %i[facebook]
 
+  has_one :billing_address, -> { where(address_type: :billing) },
+          inverse_of: :user, class_name: 'Address', dependent: :destroy
+  has_one :shipping_address, -> { where(address_type: :shipping) },
+          inverse_of: :user, class_name: 'Address', dependent: :destroy
+
   validates :email, presence: true
-  validates :password, format: { with: PASSWORD_FORMAT }
+  validates :password, format: { with: PASSWORD_FORMAT }, if: :password_required?
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|

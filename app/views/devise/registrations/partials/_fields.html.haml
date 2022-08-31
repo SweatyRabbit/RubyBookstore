@@ -1,0 +1,9 @@
+= f.hidden_field :address_type, value: address_type
+%h3.general-subtitle.mt-00= t("addresses.#{address_type}_address")
+= f.input :first_name, required: true, placeholder: t('addresses.first_name')
+= f.input :last_name, required: true, placeholder: t('addresses.last_name')
+= f.input :address, required: true, placeholder: t('addresses.address')
+= f.input :city, required: true, placeholder: t('addresses.city')
+= f.input :zip, required: true, placeholder: t('addresses.zip')
+= f.input :country, required: true, collection: ISO3166::Country.all.sort_by(&:name), as: :select, prompt: :translate
+= f.input :phone, required: true, placeholder: t('addresses.phone')

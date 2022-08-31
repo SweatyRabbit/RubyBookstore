@@ -7,7 +7,7 @@
     .general-form.field
       = simple_form_for(resource, as: resource_name, url: session_path(resource_name), defaults: { input_html: { class: "form-control" }}) do |f|
         .form-group.mb-30
-          = f.input :email, autofocus: true, autocomplete: "email", placeholder: t('devise.email')
+          = f.input :email, autofocus: true, autocomplete: "email", placeholder: t('devise.enter_email')
         .form-group.mb-30
           = f.input :password, autocomplete: "password", placeholder: t('devise.password')
           %a.help-block.in-gold-500{href: new_user_password_path}= t('devise.password.forgot_password')
@@ -21,6 +21,5 @@
         .text-center
           = f.submit t('devise.log_in'), class: 'btn btn-default mb-20'
   %p.general-sign-text.text-center
-    = t('devise.t_have_an_account')
+    = t('devise.don`t_have_an_account')
     %a.in-gold-500{href: new_user_registration_path}= t('devise.sign_up')
-%script{src: "https://use.fontawesome.com/67602d7308.js"}
