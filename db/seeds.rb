@@ -3,3 +3,5 @@
 FactoryBot.create_list(:category, 4).each do |category|
   FactoryBot.create_list(:book, 12, :with_authors, category: category)
 end
+
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
