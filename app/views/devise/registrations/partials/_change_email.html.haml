@@ -1,0 +1,8 @@
+.col-sm-5
+  %p.in-gold-500.font-18.mb-25= t('devise.email')
+  = simple_form_for(resource, validate: true, url: registration_path(resource),
+    defaults: { input_html: { class: "form-control" }}, html: { method: :put, id: 'email-form' }) do |f|
+    .form-group.mb-35
+      = f.input :email, class: 'form_control', placeholder: t('devise.enter_email')
+    .general-text-align
+      = f.button :submit, t('addresses.save'), class: 'btn btn-default mb-35'

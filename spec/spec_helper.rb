@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'rails_helper'
+require 'rack_session_access/capybara'
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|

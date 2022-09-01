@@ -7,6 +7,7 @@ ruby '3.0.0'
 
 gem 'bootsnap', require: false
 gem 'bootstrap-sass', '~> 3.4.1'
+gem 'countries', '~> 3.1'
 gem 'devise', '~> 4.8.1'
 gem 'draper'
 gem 'factory_bot_rails'
@@ -19,6 +20,7 @@ gem 'omniauth-facebook', '~> 9.0'
 gem 'omniauth-rails_csrf_protection', '~> 1.0.1'
 gem 'pagy', '~> 3.5'
 gem 'pg', '~> 1.1'
+gem 'pry', '~> 0.14.0'
 gem 'puma', '~> 5.0'
 gem 'rails', '~> 7.0.3'
 gem 'sassc-rails', '>= 2.1.0'
@@ -41,12 +43,12 @@ end
 group :development do
   gem 'rubocop-rails'
   gem 'rubocop-rspec'
-  gem 'web-console'
+  gem 'web-console', '>= 4.1.0'
 end
 
 group :test do
   gem 'database_cleaner', '~> 2.0.1'
-  gem 'pry', '~> 0.14.0'
+  gem 'rack_session_access', '~> 0.2.0'
   gem 'rack-test', '~> 1.1'
   gem 'rails-controller-testing', '~> 1.0.5'
   gem 'selenium-webdriver', '~> 4.1.0'

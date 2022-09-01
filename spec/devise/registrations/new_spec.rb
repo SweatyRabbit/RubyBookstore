@@ -9,7 +9,7 @@ RSpec.describe 'New', type: :feature do
 
   context 'when valid inputs' do
     before do
-      fill_in(I18n.t('devise.email'), with: user_data[:email])
+      fill_in(I18n.t('devise.enter_email'), with: user_data[:email])
       fill_in(I18n.t('devise.password'), with: user_data[:password])
       fill_in(I18n.t('devise.confirm_password'), with: user_data[:password])
       click_button(I18n.t('devise.sign_up'))
@@ -25,7 +25,7 @@ RSpec.describe 'New', type: :feature do
     let(:wrong_password) { 'saA' }
 
     before do
-      fill_in(I18n.t('devise.email'), with: wrong_email)
+      fill_in(I18n.t('devise.enter_email'), with: wrong_email)
       fill_in(I18n.t('devise.password'), with: wrong_password)
       fill_in(I18n.t('devise.confirm_password'), with: wrong_password.reverse)
       click_button(I18n.t('devise.sign_up'))

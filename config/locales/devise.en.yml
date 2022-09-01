@@ -56,14 +56,22 @@ en:
       send_instructions: "You will receive an email with instructions for how to unlock your account in a few minutes."
       send_paranoid_instructions: "If your account exists, you will receive an email with instructions for how to unlock it in a few minutes."
       unlocked: "Your account has been unlocked successfully. Please sign in to continue."
-    email: 'Enter Email'
+    enter_email: 'Enter Email'
+    email: 'Email'
     password: 'Password'
+    current_password: 'Current Password'
+    new_password: New Password
     confirm_password: 'Confirm Password'
     sign_up: 'Sign Up'
     log_in: 'Log In'
-    has_account: 'Already have an account?'
+    have_account: 'Already have an account?'
     don`t_have_an_account: 'Don’t have an Account?'
     or: 'or'
+    settings: 'Settings'
+    address: 'Address'
+    privacy: 'Privacy'
+    remove_account: 'Remove Account'
+    understand_about_info: 'I understand that all data will be lost'
   errors:
     messages:
       already_confirmed: "was already confirmed, please try signing in"

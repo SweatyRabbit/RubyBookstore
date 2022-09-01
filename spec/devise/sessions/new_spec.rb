@@ -9,7 +9,7 @@ RSpec.describe 'New', type: :feature do
 
   context 'with valid input' do
     before do
-      fill_in(I18n.t('devise.email'), with: user.email)
+      fill_in(I18n.t('devise.enter_email'), with: user.email)
       fill_in(I18n.t('devise.password'), with: user.password)
       click_button(I18n.t('devise.log_in'))
     end
