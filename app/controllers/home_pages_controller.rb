@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
 class HomePagesController < ApplicationController
+  LIMIT_BOOKS_TO_SHOW = 3
   def home
-    @books = Book.order(created_at: :desc).limit(2).decorate
+    @latest_books = Book.order(created_at: :desc).limit(LIMIT_BOOKS_TO_SHOW).decorate
   end
 end

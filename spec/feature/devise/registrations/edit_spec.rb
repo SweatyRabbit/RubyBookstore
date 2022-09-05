@@ -45,12 +45,12 @@ RSpec.describe 'Edit', type: :feature do
   end
 
   describe 'password change' do
-    let(:user) { create(:user) }
+    let!(:user) { create(:user) }
 
     before do
       sign_in(user)
       visit edit_user_registration_path
-      find('#privacy').click
+      page.find('#privacy').click
     end
 
     context 'with valid input' do
@@ -87,12 +87,12 @@ RSpec.describe 'Edit', type: :feature do
   end
 
   describe 'email change' do
-    let(:user) { create(:user) }
+    let!(:user) { create(:user) }
 
     before do
       sign_in(user)
       visit edit_user_registration_path
-      find('#privacy').click
+      page.find('#privacy').click
     end
 
     context 'with valid input' do

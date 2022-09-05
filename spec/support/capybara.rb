@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
+require 'capybara/rails'
 require 'capybara/rspec'
+require 'selenium-webdriver'
 
 RSpec.configure do |config|
   config.use_transactional_fixtures = false

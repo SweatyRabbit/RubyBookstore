@@ -18,6 +18,8 @@ Metrics/BlockLength:
   IgnoredMethods: ['describe', 'context', 'guard']
   Exclude:
     - 'config/environments/*'
+    - 'rspec/**/*.rb'
+    - 'app/admin/books.rb'
 
 Style/FrozenStringLiteralComment:
   Enabled: false
