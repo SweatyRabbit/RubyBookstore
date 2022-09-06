@@ -57,3 +57,10 @@ en:
     phone: Phone
     form:
       success: Successfully added %{type} address
+  review:
+    score: Score
+    verified_reviewer: Verified reviewer
+    reviews: Reviews %{reviews_count}
+    success: Thanks for Review. It will be published as soon as Admin will approve it.
+  button:
+    post: Post
