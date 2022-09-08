@@ -12,7 +12,7 @@
           .col-sm-7
             .mb-60
               %h1= book.title.capitalize
-              %p.lead= book.description
+              %p.lead= book.description.truncate(250)
               %p.lead.small= book.authors_full_name
               .general-align
                 %button.disabled.btn= I18n.t('slider.buy_now')
