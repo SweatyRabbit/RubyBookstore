@@ -26,7 +26,7 @@ Rails.application.configure do
 
   config.assets.compile = true
 
-  config.active_storage.service = :local
+  config.active_storage.service = :amazon
 
   config.log_level = :info
 
