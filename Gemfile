@@ -26,6 +26,7 @@ gem 'pg', '~> 1.1'
 gem 'pry', '~> 0.14.0'
 gem 'puma', '~> 5.0'
 gem 'rails', '~> 7.0.3'
+gem 'ruby-vips'
 gem 'sassc-rails', '>= 2.1.0'
 gem 'simplecov', '~> 0.21.2', require: false
 gem 'simple_form', '~> 5.1'
