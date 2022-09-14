@@ -19,7 +19,7 @@ Metrics/BlockLength:
   Exclude:
     - 'config/environments/*'
     - 'rspec/**/*.rb'
-    - 'app/admin/books.rb'
+    - 'app/admin/*.rb'
 
 Style/FrozenStringLiteralComment:
   Enabled: false
