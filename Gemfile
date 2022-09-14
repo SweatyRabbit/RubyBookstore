@@ -6,6 +6,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '3.0.0'
 
 gem 'activeadmin', '~> 2.13', '>= 2.13.1'
+gem 'aws-sdk-s3', '~> 1.113', require: false
 gem 'bootsnap', require: false
 gem 'bootstrap-sass', '~> 3.4.1'
 gem 'countries', '~> 3.1'
@@ -14,6 +15,7 @@ gem 'draper'
 gem 'factory_bot_rails'
 gem 'ffaker'
 gem 'haml-rails'
+gem 'image_processing', '~> 1.12'
 gem 'importmap-rails'
 gem 'jbuilder'
 gem 'jquery-rails', '~> 4.5.0'

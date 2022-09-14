@@ -1,7 +1,27 @@
 # frozen_string_literal: true
 
-FactoryBot.create_list(:category, 4).each do |category|
-  FactoryBot.create_list(:book, 12, :with_authors, category: category)
+10.times { Author.create(first_name: FFaker::Name.first_name, last_name: FFaker::Name.last_name) }
+10.times { Category.create(name: FFaker::Book.genre) }
+
+50.times do
+  book = Book.create(
+    title: FFaker::Lorem.word,
+    price: FFaker.numerify('##.##'),
+    description: FFaker::Book.description,
+    publication_year: FFaker::Vehicle.year,
+    height: FFaker.numerify('#.#'),
+    width: FFaker.numerify('#.#'),
+    depth: FFaker.numerify('#.#'),
+    materials: FFaker::FreedomIpsum.word,
+    category: Category.all.sample
+  )
+  book.authors << Author.all.sample(rand(1..3))
+  book.title_image.attach(io: File.open('app/assets/images/default_book.png'),
+                          filename: 'default_book.png', content_type: 'image/png')
+  3.times do
+    book.body_images.attach(io: File.open('app/assets/images/default_book.png'),
+                            filename: 'default_book.png', content_type: 'image/png')
+  end
 end
 
 AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')

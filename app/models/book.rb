@@ -11,4 +11,7 @@ class Book < ApplicationRecord
   belongs_to :category
 
   has_many :reviews, dependent: :destroy
+
+  has_one_attached :title_image, dependent: :destroy
+  has_many_attached :body_images, dependent: :destroy
 end

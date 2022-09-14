@@ -30,7 +30,9 @@ Rails.application.configure do
   config.active_support.disallowed_deprecation = :raise
 
   config.active_support.disallowed_deprecation_warnings = []
+  config.active_storage.multiple_file_field_include_hidden = false
 
   config.action_mailer.default_url_options = { host: 'localhost:3000' }
   config.action_mailer.raise_delivery_errors = false
+  config.middleware.use RackSessionAccess::Middleware
 end

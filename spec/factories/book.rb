@@ -9,6 +9,8 @@ FactoryBot.define do
     depth { FFaker.numerify('#.#') }
     materials { FFaker::FreedomIpsum.word }
     category
+    title_image { Rack::Test::UploadedFile.new('app/assets/images/default_book.png', 'default_book.png') }
+    body_images { [Rack::Test::UploadedFile.new('app/assets/images/default_book.png', 'default_book.png')] }
 
     trait :with_authors do
       authors { create_list(:author, rand(1..3)) }

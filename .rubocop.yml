@@ -33,3 +33,7 @@ Metrics/MethodLength:
 
 Rails/BulkChangeTable:
   Enabled: false
+
+Metrics/AbcSize:
+  Exclude:
+    - db/migrate/20220909104437_create_active_storage_tables.active_storage.rb
