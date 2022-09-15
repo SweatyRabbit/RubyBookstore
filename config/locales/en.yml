@@ -2,6 +2,14 @@ en:
   time:
     formats:
       default: "%Y.%m.%d - %H:%M"
+  number:
+     currency:
+        format:
+          unit: '€'
+          delimiter: ','
+          separator: '.'
+          precision: 2
+          format: '%u%n'
   footer:
     home: 'Home'
     shop: 'Shop'
@@ -67,3 +75,22 @@ en:
     success: Thanks for Review. It will be published as soon as Admin will approve it.
   button:
     post: Post
+    add_to_cart: Add to Cart
+  cart:
+    cart: Cart
+    cart_is_empty: Cart is empty
+    coupon_used: Coupon has already used.
+    invalid_coupon: Invalid coupon code.
+    coupon_added: Coupon successfully added to your cart.
+    quantity: Quantity
+    price: Price
+    subtotal: SubTotal
+    product: Product
+    enter_coupon_code: Enter Your Coupon Code
+    order_summary: Order Summary
+    coupon: Coupon
+    order_total: Order Total
+    book_added: Cart successfully updated
+    low_quantity: should be positive
+    hight_quantity: Not enough books to buy
+    item_deleted: Item successfully deleted

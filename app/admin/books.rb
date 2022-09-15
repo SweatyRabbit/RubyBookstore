@@ -3,7 +3,7 @@
 ActiveAdmin.register Book do
   decorate_with BookDecorator
   permit_params :title, :price, :description,
-                :publication_year, :width, :height,
+                :publication_year, :width, :height, :quantity,
                 :depth, :materials, :category_id, :title_image, body_images: [], author_ids: []
 
   index do
@@ -14,6 +14,7 @@ ActiveAdmin.register Book do
     column :title do |book|
       link_to book.title, resource_path(book)
     end
+    colum  :quantity
     column :description
     column :authors_full_name
     column :category
@@ -34,6 +35,7 @@ ActiveAdmin.register Book do
       row :title
       row :authors, &:authors_full_name
       row :price
+      row :quantity
       row :description
       row :publication_year
       row :category
@@ -49,8 +51,9 @@ ActiveAdmin.register Book do
       f.input :category
       f.input :title
       f.input :authors, collection: Author.all.decorate(&:full_name), as: :check_boxes
-      f.input :description
       f.input :price
+      f.input :quantity
+      f.input :description
       f.input :publication_year
       f.input :height
       f.input :width

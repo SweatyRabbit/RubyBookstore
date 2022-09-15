@@ -15,6 +15,6 @@ class BooksController < ApplicationController
   private
 
   def prepared_books
-    FilterBooksByCategory.new(params).call
+    Books::FilterBooksByCategory.new(params).call
   end
 end
