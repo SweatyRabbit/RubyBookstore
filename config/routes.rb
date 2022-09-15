@@ -9,5 +9,5 @@ Rails.application.routes.draw do
   resources :books, only: %i[index show]
   resource :address, only: [:update]
   resources :reviews, only: [:create]
-  resource :cart, only: [:show, :update]
+  resource :cart, only: %i[show update]
 end
