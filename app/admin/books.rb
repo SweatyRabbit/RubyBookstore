@@ -14,7 +14,7 @@ ActiveAdmin.register Book do
     column :title do |book|
       link_to book.title, resource_path(book)
     end
-    colum  :quantity
+    column :quantity
     column :description
     column :authors_full_name
     column :category
