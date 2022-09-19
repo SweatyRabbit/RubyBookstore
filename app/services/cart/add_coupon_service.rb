@@ -25,7 +25,7 @@ module Cart
     end
 
     def coupon
-      @coupon = Coupon.find_by(code: params[:code])
+      @coupon = Coupon.find_by(code: @coupon_params[:code])
     end
   end
 end

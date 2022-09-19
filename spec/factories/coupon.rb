@@ -3,8 +3,8 @@
 FactoryBot.define do
   factory :coupon do
     order
-    code { FFaker::String.random(length: 4..10) }
-    sale { FFaker::Number.between(from: 0.0, to: 1.0) }
+    code { FFaker::Code.npi }
+    sale { FFaker::Random.rand(0.0...1.0) }
     active { true }
   end
 end

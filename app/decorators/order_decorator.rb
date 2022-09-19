@@ -16,8 +16,12 @@ class OrderDecorator < ApplicationDecorator
     coupon&.sale || 0.0
   end
 
+  def total_discount
+    subtotal * discount
+  end
+
   def total_price
-    total = subtotal - discount
+    total = subtotal * (1 - discount)
     total.negative? ? 0.0 : total
   end
 end

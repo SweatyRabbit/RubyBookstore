@@ -76,6 +76,7 @@ en:
   button:
     post: Post
     add_to_cart: Add to Cart
+    apply_coupon: Apply Coupon
   cart:
     cart: Cart
     cart_is_empty: Cart is empty

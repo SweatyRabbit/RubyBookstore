@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   end
 
   def current_cart
-    return Order.find(session[:cart_id]) if session[:cart_id]
+    return Order.find(session[:cart_id]) if session[:cart_id] && Order.find(session[:cart_id]).present?
 
     cart = Order.create
     session[:cart_id] = cart.id
