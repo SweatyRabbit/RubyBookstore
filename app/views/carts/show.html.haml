@@ -44,8 +44,8 @@
                   %strong.font-18= t('cart.order_total')
                 %td
                   %strong.font-18= number_to_currency(cart.total_price)
-            %button.btn.btn-default.mb-20.visible-xs-inline-block Checkout
-    %button.btn.btn-default.mb-20.hidden-xs.center-block Checkout
+            = link_to t('cart.checkout'), quick_registration_path, method: :get, class: 'btn btn-defaultmb-20 visible-xs-inline-block'
+  = link_to t('cart.checkout'), quick_registration_path, method: :get, class: 'btn btn-default mb-20 hidden-xs center-block checkout-btn'
 - else
   .jumbotron.text-center.mb-0.mb-res-50
     %p= t('cart.cart_is_empty')

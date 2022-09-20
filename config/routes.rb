@@ -10,4 +10,6 @@ Rails.application.routes.draw do
   resource :address, only: [:update]
   resources :reviews, only: [:create]
   resource :cart, only: %i[show update]
+  resource :checkout, only: %i[show update]
+  resource :quick_registration, only: %i[show create]
 end
