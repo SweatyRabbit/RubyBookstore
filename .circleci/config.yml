@@ -8,7 +8,7 @@ orbs:
 jobs:
   lintering:
     docker:
-      - image: cimg/ruby:3.0.3-node
+      - image: cimg/ruby:3.0.0-node
     steps:
       - checkout
       - ruby/install-deps
@@ -21,17 +21,16 @@ jobs:
 
   test:
     docker:
-      - image: cimg/ruby:3.0.3-node
+      - image: cimg/ruby:3.0.0-node
       - image: circleci/postgres:12-alpine
         environment:
-          POSTGRES_USER: Rails.application.credentials.dig(:bookstore, :username)
+          POSTGRES_USER: ivan
           POSTGRES_DB: RubyBookstore_test
-          POSTGRES_PASSWORD: Rails.application.credentials.dig(:bookstore, :password)
+          POSTGRES_PASSWORD: admin
     environment:
       BUNDLE_JOBS: "3"
       BUNDLE_RETRY: "3"
       PGHOST: 127.0.0.1
-      BOOK_STORE_DATABASE_PASSWORD: Rails.application.credentials.dig(:bookstore, :password)
       RAILS_ENV: test
     steps:
       - checkout

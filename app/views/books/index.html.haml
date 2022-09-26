@@ -1,0 +1,9 @@
+%main.container
+  %h1.general-title-margin Сatalog
+  = render partial: 'books/partials/filter'
+  = render partial: 'books/partials/category'
+  .mb-120
+    .row#books_wrapper
+      = render partial: 'books/partials/book'
+  .text-center#load_more_link
+    = render partial: 'books/partials/load_more'

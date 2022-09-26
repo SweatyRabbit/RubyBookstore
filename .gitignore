@@ -12,11 +12,16 @@
 /tmp/*
 !/log/.keep
 !/tmp/.keep
+/vendor/
+/app/vendor/
 
 # Ignore pidfiles, but keep the directory.
 /tmp/pids/*
 !/tmp/pids/
 !/tmp/pids/.keep
+
+/node_modules
+/coverage
 
 # Ignore uploaded files in development.
 /storage/*
@@ -29,3 +34,9 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+/config/credentials/development.key
+
+/config/credentials/production.key
+
+/config/credentials/test.key

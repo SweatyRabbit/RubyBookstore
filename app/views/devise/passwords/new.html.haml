@@ -1,0 +1,11 @@
+%h2= t('devise.password.forgot_password')
+.general-form.field
+  = simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }, defaults: { input_html: { class: "form-control" }}) do |f|
+    = render "devise/shared/error_messages", resource: resource
+    .field
+      = f.label :email
+      %br/
+      = f.email_field :email, autofocus: true, autocomplete: "email"
+    .actions
+      = f.submit "Send me reset password instructions"
+= render "devise/shared/links"
