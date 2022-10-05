@@ -7,6 +7,7 @@
   book = Book.create(
     title: FFaker::Lorem.word,
     price: FFaker.numerify('##.##'),
+    quantity: FFaker::Random.rand(5...100),
     description: FFaker::Book.description,
     publication_year: FFaker::Vehicle.year,
     height: FFaker.numerify('#.#'),

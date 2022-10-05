@@ -5,6 +5,7 @@ class CreateBooks < ActiveRecord::Migration[7.0]
     create_table :books do |t|
       t.string :title, null: false
       t.decimal :price
+      t.integer :quantity
       t.text :description
       t.integer :publication_year
       t.decimal :height, precision: 10, scale: 2

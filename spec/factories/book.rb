@@ -3,6 +3,7 @@ FactoryBot.define do
     title { FFaker::Lorem.word }
     price { FFaker.numerify('##.##') }
     description { FFaker::Book.description }
+    quantity { FFaker::Random.rand(5...100) }
     publication_year { FFaker::Vehicle.year }
     height { FFaker.numerify('#.#') }
     width { FFaker.numerify('#.#') }
