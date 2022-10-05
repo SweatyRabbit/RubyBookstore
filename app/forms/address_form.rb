@@ -4,7 +4,7 @@ class AddressForm
   include ActiveModel::Model
 
   attr_accessor :id, :first_name, :last_name, :address, :city, :zip, :country, :phone, :address_type, :user, :user_id,
-                :created_at, :updated_at
+                :created_at, :updated_at, :addressable_type, :addressable_id
 
   LENGTH = {
     fifty_length: 50,

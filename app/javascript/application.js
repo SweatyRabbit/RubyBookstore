@@ -5,3 +5,4 @@ import 'bootstrap'
 import("./src/books")
 import("./src/users")
 import("./src/reviews")
+import("./src/checkouts")

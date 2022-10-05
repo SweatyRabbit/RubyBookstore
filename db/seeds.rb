@@ -26,3 +26,12 @@
 end
 
 AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
+
+3.times do
+  DeliveryType.create(
+    name: FFaker::FreedomIpsum.word,
+    min_days: FFaker::Random.rand(1...6),
+    max_days: FFaker::Random.rand(7...15),
+    price: FFaker.numerify('##.##')
+  )
+end

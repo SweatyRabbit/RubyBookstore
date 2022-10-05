@@ -5,3 +5,7 @@ en:
       reject: Reject
       approved: Approved
       rejected: Rejected
+    orders:
+      in_delivery_state: Changed To In Delivery
+      delivered_state: Change To Delivered
+      canceled_state: Change To Canceled
