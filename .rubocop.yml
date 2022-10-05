@@ -36,4 +36,12 @@ Rails/BulkChangeTable:
 
 Metrics/AbcSize:
   Exclude:
-    - db/migrate/20220909104437_create_active_storage_tables.active_storage.rb
+    - db/migrate/*
+
+RSpec/MultipleMemoizedHelpers:
+  Exclude:
+    - spec/**/*
+
+RSpec/LetSetup:
+  Exclude:
+    - spec/**/*
