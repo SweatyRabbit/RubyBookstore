@@ -95,3 +95,12 @@ en:
     low_quantity: should be positive
     hight_quantity: Not enough books to buy
     item_deleted: Item successfully deleted
+    checkout: Checkout
+  checkouts:
+    returning_customer: Returning Customer
+    new_customer: New Customer
+    you_will_be_able_to_create_password_later: You’ll be able to create password later
+    continue_checkout: Continue to Checkout
+    save_and_continue: Save and Continue
+  quick_registration:
+    success: 'User successfully created, email with password change instructions were sent'
