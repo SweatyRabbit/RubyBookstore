@@ -42,7 +42,7 @@ class OrderDecorator < ApplicationDecorator
   end
 
   def order_address_country(address_type)
-    ISO3166::Country.find_country_by_alpha2(order_address(address_type).country)
+    order_address(address_type).country
   end
 
   def address_city_with_zip(address_type)

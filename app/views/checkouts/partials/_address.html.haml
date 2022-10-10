@@ -16,7 +16,7 @@
             = check_box_tag 'order[only_billing]', "1", false, class: 'checkbox-input', hidden: true
             %span.checkbox-icon
               %i.fa.fa-check
-            %span.checkbox-text= t('checkouts.use_billing_address')
+            %span.checkbox-text= t('checkouts.addresses.use_billing_address')
       = render partial: 'checkouts/partials/order_summary', locals: { order: @order }
       .text-center
         = f.button :submit, t('checkouts.save_and_continue')

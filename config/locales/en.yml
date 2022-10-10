@@ -24,6 +24,7 @@ en:
     my_account: 'My account'
     log_out: 'Log out'
     settings: 'Settings'
+    orders: 'Orders'
   home:
     welcome: 'Welcome to our amazing Bookstore!'
     description: 'We pore through hundreds of new books each month and select the five best we can find to share with our members.'
@@ -103,6 +104,12 @@ en:
     you_will_be_able_to_create_password_later: You’ll be able to create password later
     continue_checkout: Continue to Checkout
     save_and_continue: Save and Continue
+    addresses:
+      addresses: Addresses
+      billing_address: Billing Address
+      all_fields_are_required: all fields are required
+      shipping_address: Shipping Address
+      use_billing_address: Use Billing Address
     delivery:
       method: Method
       days: Days
@@ -137,3 +144,10 @@ en:
     success: 'User successfully created, email with password change instructions were sent'
   order_mailer:
     subject: "Dear Customer, order #%{order_number} created successfully!"
+  orders:
+    no_orders: Orders not found
+    sort:
+      complete: Waiting for processing
+      in_delivery: In delivery
+      delivered: Delivered
+      canceled: Canceled
